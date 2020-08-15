@@ -179,7 +179,9 @@ button:hover {
 
 .grid-plant {
   border-radius: 100%;
+  border: 1px solid;
 }
+
 .grid-plant:focus {
   outline: none;
   box-shadow: 0 0 1rem;
