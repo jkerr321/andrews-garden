@@ -56,8 +56,7 @@ Things still to do
 - front end refactor? toggle?
 - From - Actually fill notes section with notes
 - Password for edit mode?
-- add older gallery
-- get off hobby Dyno
+- add older galler
 - improve responsive gallery
 
 **Warnings that might need dealing with:**

@@ -89,6 +89,7 @@
             </div>
             <div class="modal-content js-modal-content-form hidden">
                 <form method="POST" action="/{{seasonPath}}">
+                    <input name="_csrf" class="hidden" value="{{csrfToken}}"></input>
                     <div class="modal-title js-form-title"></div>
                     <div class="form-body">
                             <label class="form-body__label" for="form-latin-name">Latin Name</label>

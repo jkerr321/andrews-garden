@@ -1,4 +1,6 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const csrf = require('csurf');
 const app = express();
 const exphbs = require('express-handlebars');
 const path = require('path');
@@ -14,7 +16,9 @@ app.engine('html', exphbs({
 
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, '/views'));
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(csrf({ cookie: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => res.redirect('/summer19'));

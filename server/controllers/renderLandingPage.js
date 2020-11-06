@@ -84,6 +84,7 @@ const getPlantData = rows => {
 module.exports = async (req, res, seasonName) => {
 	try {
 		const seasonPath = req.path.substr(1); // e.g. 'summer19'
+		const csrfToken = req.csrfToken();
 		const rows = await getRows(seasonPath);
 		let gridItems;
 		if (req.method === 'POST') {
@@ -93,7 +94,7 @@ module.exports = async (req, res, seasonName) => {
 		} else {
 			gridItems = await getPlantData(rows);
 		}
-		return res.render('landing', { gridItems, seasonName, seasonPath, colours });
+		return res.render('landing', { gridItems, seasonName, seasonPath, colours, csrfToken });
 	} catch (err) {
 		console.error('render error', err);
 	}
