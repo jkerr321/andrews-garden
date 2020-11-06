@@ -111,9 +111,7 @@ if (document.querySelector('.js-modal')) {
 		const formAnnual = document.querySelector('.js-form-annual');
 		const formPerennial = document.querySelector('.js-form-perennial');
 		const formColour = document.querySelector('.js-form-colour');
-		const formImage = document.querySelector('.js-form-image');
 		const formPlantedDate = document.querySelector('.js-form-planted-date');
-		const formLink = document.querySelector('.js-form-link');
 		const formNotes = document.querySelector('.js-form-notes');
 		const formPosition = document.querySelectorAll('.js-form-position');
 
@@ -123,9 +121,7 @@ if (document.querySelector('.js-modal')) {
 		formTitle.innerHTML = plantInfo.position || '';
 		formCommonName.placeholder = plantInfo.commonName || '';
 		formLatinName.placeholder = plantInfo.latinName || '';
-		formImage.placeholder = plantInfo.image || '';
 		formPlantedDate.placeholder = plantInfo.plantedDate || '';
-		formLink.placeholder = plantInfo.link || '';
 		formNotes.placeholder = plantInfo.notes || '';
 		formPosition.forEach(field => field.value = plantInfo.position || '');
 

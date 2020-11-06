@@ -4,6 +4,9 @@ const GoogleSpreadsheet = require('google-spreadsheet');
 const { promisify } = require('util');
 const config = require('../../config');
 const colours = require('../colours');
+const xss = require('xss');
+
+const sanitise = string => xss(string);
 
 const getRows = async (season) => {
 	try {
@@ -40,7 +43,7 @@ const updateSpreadsheet = async (rows, reqBody) => {
 						row.position = reqBody.position;
 					} else if (reqBody[key]) {
 						// e.g. if (reqBody.colour) {row.colour = reqBody.colour};
-						row[key] = reqBody[key];
+						row[key] = sanitise(reqBody[key]);
 					}
 				});
 				await row.save();
